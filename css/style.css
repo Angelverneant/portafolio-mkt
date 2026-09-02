@@ -1,47 +1,208 @@
 /* ==========================================================================
-   1. RESET Y ESTILOS GENERALES
+   1. RESET Y CONFIGURACIÓN BASE
    ========================================================================== */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    /* Permite calcular bordes y paddings dentro del tamaño del elemento */
+    box-sizing: border-box; /* Incluye bordes y padding en el ancho total */
 }
 
 body {
-    font-family: 'Outfit', 'Arial', sans-serif;
-    background-color: #f0f4f8;
-    /* Color de fondo de la página */
-
-    /* ESTRUCTURA DE CENTRADO (FLEXBOX) */
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f1f4f9; /* Fondo suave neutro (Regla 60% de color) */
+    
+    /* Centrado absoluto con Flexbox */
     display: flex;
     justify-content: center;
-    /* Centra la tarjeta horizontalmente */
     align-items: center;
-    /* Centra la tarjeta verticalmente */
-
     min-height: 100vh;
-    /* Fuerza al body a ocupar todo el alto de la pantalla visible */
-    padding: 20px;
-    /* Colchón de seguridad para que la tarjeta no choque en celulares */
+    padding: 24px 16px;
+    color: #0f172a;
 }
 
 /* ==========================================================================
-   2. CONTENEDOR CENTRAL RESPONSIVO (CARD)
+   2. CONTENEDOR PRINCIPAL (TARJETA)
    ========================================================================== */
 .card {
     background-color: #ffffff;
-
-    /* RESPONSIVIDAD */
-    width: 90%;
-    /* Ocupará el 90% de la pantalla en dispositivos móviles */
-    max-width: 600px;
-    /* En pantallas grandes, se detendrá y no medirá más de 600px */
-
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    /* Sombra suave para dar profundidad */
-    padding: 40px;
+    width: 100%;
+    max-width: 580px; /* Ancho máximo en escritorio */
+    border-radius: 24px;
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08); /* Sombra elegante */
+    padding: 36px 40px 48px;
     text-align: center;
-    /* Centra los textos que pongas dentro por defecto */
+}
+
+/* ==========================================================================
+   3. MENÚ DE NAVEGACIÓN
+   ========================================================================== */
+.nav-menu ul {
+    display: flex;
+    justify-content: flex-end; /* Alinea los enlaces a la derecha */
+    gap: 24px;
+    list-style: none; /* Elimina las viñetas por defecto */
+}
+
+.nav-menu a {
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1e293b;
+    padding-bottom: 4px;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.nav-menu a:hover {
+    color: #4f46e5; /* Color primario interactivo al pasar el mouse */
+}
+
+/* Línea indicadora del enlace activo (Inicio) */
+.nav-menu a.active {
+    color: #0f172a;
+}
+
+.nav-menu a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2.5px;
+    background-color: #4f46e5; /* Barra púrpura/azul de selección */
+    border-radius: 4px;
+}
+
+/* ==========================================================================
+   4. AVATAR / FOTO DE PERFIL
+   ========================================================================== */
+.avatar-container {
+    margin: 28px auto 20px;
+    width: 140px;
+    height: 140px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Efecto de halo circular suave alrededor de la foto */
+.avatar-container::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(199, 210, 254, 0.6) 0%, rgba(224, 231, 255, 0.2) 70%, transparent 100%);
+    z-index: 1;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover; /* Evita que la foto se deforme o estire */
+    position: relative;
+    z-index: 2;
+    border: 3px solid #ffffff; /* Pequeño borde blanco limpio */
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+/* ==========================================================================
+   5. TEXTOS Y BIOGRAFÍA
+   ========================================================================== */
+.profile-name {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #0d1b2a;
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+}
+
+.profile-tagline {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #3b5266;
+    margin-bottom: 16px;
+}
+
+/* Línea decorativa central */
+.accent-line {
+    width: 36px;
+    height: 3px;
+    background-color: #818cf8; /* Color de acento */
+    border-radius: 9999px;
+    margin: 0 auto 20px;
+}
+
+.profile-bio p {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: #475569;
+    max-width: 440px;
+    margin: 0 auto 32px;
+}
+
+/* ==========================================================================
+   6. BOTONES DE ENLACES / REDES SOCIALES
+   ========================================================================== */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 310px;
+    margin: 0 auto;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background-color: #ffffff;
+    border: 1.5px solid #c7d2fe; /* Borde lila/azul suave */
+    border-radius: 12px;
+    color: #0f172a;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+/* Tamaño de los iconos vectoriales SVG */
+.social-btn .icon {
+    width: 20px;
+    height: 20px;
+    color: #4f46e5; /* Color del icono */
+    flex-shrink: 0;
+}
+
+/* Estado Hover (Al pasar el cursor por encima) */
+.social-btn:hover {
+    background-color: #f5f3ff; /* Fondo sutil al interactuar */
+    border-color: #6366f1;
+    color: #4338ca;
+    transform: translateY(-2px); /* Pequeña elevación */
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+}
+
+/* ==========================================================================
+   7. RESPONSIVE DESIGN (MÓVILES)
+   ========================================================================== */
+@media (max-width: 480px) {
+    .card {
+        padding: 28px 20px 36px;
+    }
+
+    .profile-name {
+        font-size: 1.6rem;
+    }
+
+    .profile-tagline {
+        font-size: 0.9rem;
+    }
+
+    .profile-bio p {
+        font-size: 0.88rem;
+    }
 }

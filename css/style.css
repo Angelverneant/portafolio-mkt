@@ -187,14 +187,166 @@ body {
 }
 
 /* ==========================================================================
-   7. RESPONSIVE DESIGN (MÓVILES)
+   7. PÁGINA DE PROYECTOS (proyectos.html)
    ========================================================================== */
+.card-projects {
+    max-width: 740px; /* Ancho ampliado para distribución en dos columnas */
+    text-align: left; /* Alineación del contenido a la izquierda */
+    padding: 36px 48px 48px;
+}
+
+.projects-header {
+    margin-top: 12px;
+    margin-bottom: 24px;
+}
+
+.projects-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+}
+
+/* Línea de acento alineada a la izquierda */
+.project-accent-line {
+    margin: 0 0 14px 0;
+    width: 38px;
+    height: 3px;
+    background-color: #4f46e5;
+    border-radius: 9999px;
+}
+
+.projects-subtitle {
+    font-size: 0.95rem;
+    color: #475569;
+    font-weight: 400;
+}
+
+/* Lista y contenedor de artículos de proyectos */
+.projects-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    padding: 26px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.project-item:first-child {
+    padding-top: 8px;
+}
+
+.project-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.project-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.project-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.project-desc {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: #64748b;
+    margin-bottom: 14px;
+    max-width: 360px;
+}
+
+/* Enlace / Botón de acción con flecha */
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #4f46e5;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.project-link .arrow {
+    transition: transform 0.2s ease;
+    display: inline-block;
+}
+
+.project-link:hover {
+    color: #3730a3;
+}
+
+.project-link:hover .arrow {
+    transform: translateX(4px);
+}
+
+/* Contenedor de la imagen / mockup */
+.project-image-container {
+    width: 250px;
+    height: 155px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #f8fafc;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.project-item:hover .project-img {
+    transform: scale(1.03);
+}
+
+/* ==========================================================================
+   8. RESPONSIVE DESIGN (MÓVILES Y PANTALLAS PEQUEÑAS)
+   ========================================================================== */
+@media (max-width: 680px) {
+    .card-projects {
+        padding: 28px 20px 36px;
+    }
+
+    .project-item {
+        flex-direction: column-reverse;
+        align-items: stretch;
+        gap: 16px;
+        padding: 22px 0;
+    }
+
+    .project-image-container {
+        width: 100%;
+        height: 180px;
+    }
+
+    .project-desc {
+        max-width: 100%;
+    }
+}
+
 @media (max-width: 480px) {
     .card {
         padding: 28px 20px 36px;
     }
 
-    .profile-name {
+    .profile-name,
+    .projects-title {
         font-size: 1.6rem;
     }
 

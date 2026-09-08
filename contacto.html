@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Andjelica Verneant</title>
+
+    <!-- Vinculación de estilos CSS compartidos -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Tipografía Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- TARJETA PRINCIPAL (CARD) -->
+    <main class="card card-contact">
+
+        <!-- 1. MENÚ DE NAVEGACIÓN SUPERIOR -->
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="proyectos.html">Proyectos</a></li>
+                <li><a href="contacto.html" class="active">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <!-- 2. ENCABEZADO DE LA SECCIÓN DE CONTACTO -->
+        <header class="contact-header">
+            <h1 class="contact-title">Contacto</h1>
+            <div class="accent-line contact-accent-line"></div>
+            <p class="contact-subtitle">¡Escríbeme un mensaje y nos pondremos en contacto a la brevedad!</p>
+        </header>
+
+        <!-- 3. FORMULARIO DE CONTACTO -->
+        <form action="#" method="POST" class="contact-form">
+            <div class="form-group">
+                <label for="username">Nombre Completo:</label>
+                <input type="text" id="username" name="username" placeholder="Ej. Juan Pérez" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Enviar Mensaje</button>
+        </form>
+
+    </main>
+
+</body>
+
+</html>

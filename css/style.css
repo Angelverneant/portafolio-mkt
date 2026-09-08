@@ -316,10 +316,124 @@ body {
 }
 
 /* ==========================================================================
-   8. RESPONSIVE DESIGN (MÓVILES Y PANTALLAS PEQUEÑAS)
+   8. PÁGINA DE CONTACTO (contacto.html)
+   ========================================================================== */
+.card-contact {
+    max-width: 580px;
+    text-align: left;
+    padding: 36px 48px 48px;
+}
+
+.contact-header {
+    margin-top: 12px;
+    margin-bottom: 24px;
+}
+
+.contact-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+}
+
+.contact-accent-line {
+    margin: 0 0 14px 0;
+    width: 38px;
+    height: 3px;
+    background-color: #4f46e5;
+    border-radius: 9999px;
+}
+
+.contact-subtitle {
+    font-size: 0.95rem;
+    color: #475569;
+    font-weight: 400;
+}
+
+/* Formulario */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: #0f172a;
+    background-color: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #94a3b8;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    background-color: #ffffff;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.btn-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 24px;
+    background-color: #4f46e5;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    margin-top: 6px;
+}
+
+.btn-submit:hover {
+    background-color: #4338ca;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   9. RESPONSIVE DESIGN (MÓVILES Y PANTALLAS PEQUEÑAS)
    ========================================================================== */
 @media (max-width: 680px) {
-    .card-projects {
+    .card-projects,
+    .card-contact {
         padding: 28px 20px 36px;
     }
 
@@ -346,7 +460,8 @@ body {
     }
 
     .profile-name,
-    .projects-title {
+    .projects-title,
+    .contact-title {
         font-size: 1.6rem;
     }
 

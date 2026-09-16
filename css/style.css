@@ -10,9 +10,9 @@
 
 body {
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #f1f4f9;
-    /* Fondo suave neutro (Regla 60% de color) */
-
+    background: linear-gradient(135deg, #eef2ff 0%, #f5f3ff 50%, #f1f5f9 100%);
+    background-attachment: fixed;
+    
     /* Centrado absoluto con Flexbox */
     display: flex;
     justify-content: center;
@@ -26,14 +26,16 @@ body {
    2. CONTENEDOR PRINCIPAL (TARJETA)
    ========================================================================== */
 .card {
-    background-color: #ffffff;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
     width: 100%;
     max-width: 580px;
     /* Ancho máximo en escritorio */
-    border-radius: 24px;
-    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
-    /* Sombra elegante */
-    padding: 36px 40px 48px;
+    border-radius: 28px;
+    border: 1px solid rgba(224, 231, 255, 0.6);
+    box-shadow: 0 25px 50px -12px rgba(79, 70, 229, 0.12), 0 8px 24px rgba(15, 23, 42, 0.05);
+    /* Sombra elegante y luminosa */
+    padding: 38px 42px 48px;
     text-align: center;
 }
 
@@ -53,10 +55,10 @@ body {
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 600;
-    color: #1e293b;
+    color: #475569;
     padding-bottom: 4px;
     position: relative;
-    transition: color 0.2s ease;
+    transition: all 0.25s ease;
 }
 
 .nav-menu a:hover {
@@ -66,7 +68,8 @@ body {
 
 /* Línea indicadora del enlace activo (Inicio) */
 .nav-menu a.active {
-    color: #0f172a;
+    color: #4f46e5;
+    font-weight: 700;
 }
 
 .nav-menu a.active::after {
@@ -75,9 +78,9 @@ body {
     bottom: -2px;
     left: 0;
     width: 100%;
-    height: 2.5px;
-    background-color: #4f46e5;
-    /* Barra púrpura/azul de selección */
+    height: 3px;
+    background: linear-gradient(90deg, #4f46e5, #7c3aed);
+    /* Barra degradada de selección */
     border-radius: 4px;
 }
 
@@ -86,8 +89,8 @@ body {
    ========================================================================== */
 .avatar-container {
     margin: 28px auto 20px;
-    width: 140px;
-    height: 140px;
+    width: 145px;
+    height: 145px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -98,10 +101,11 @@ body {
 .avatar-container::before {
     content: '';
     position: absolute;
-    inset: -6px;
+    inset: -8px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(199, 210, 254, 0.6) 0%, rgba(224, 231, 255, 0.2) 70%, transparent 100%);
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.35) 0%, rgba(168, 85, 247, 0.35) 100%);
     z-index: 1;
+    filter: blur(4px);
 }
 
 .avatar-img {
@@ -112,18 +116,18 @@ body {
     /* Evita que la foto se deforme o estire */
     position: relative;
     z-index: 2;
-    border: 3px solid #ffffff;
+    border: 3.5px solid #ffffff;
     /* Pequeño borde blanco limpio */
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.15);
 }
 
 /* ==========================================================================
    5. TEXTOS Y BIOGRAFÍA
    ========================================================================== */
 .profile-name {
-    font-size: 1.9rem;
+    font-size: 1.95rem;
     font-weight: 700;
-    color: #0d1b2a;
+    color: #0f172a;
     letter-spacing: -0.02em;
     margin-bottom: 6px;
 }
@@ -131,16 +135,16 @@ body {
 .profile-tagline {
     font-size: 1rem;
     font-weight: 500;
-    color: #3b5266;
+    color: #4f46e5;
     margin-bottom: 16px;
 }
 
 /* Línea decorativa central */
 .accent-line {
-    width: 36px;
-    height: 3px;
-    background-color: #818cf8;
-    /* Color de acento */
+    width: 44px;
+    height: 3.5px;
+    background: linear-gradient(90deg, #4f46e5, #9333ea);
+    /* Color de acento degradado */
     border-radius: 9999px;
     margin: 0 auto 20px;
 }
@@ -160,7 +164,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    max-width: 310px;
+    max-width: 320px;
     margin: 0 auto;
 }
 
@@ -168,17 +172,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    padding: 12px 20px;
+    gap: 12px;
+    padding: 13px 22px;
     background-color: #ffffff;
-    border: 1.5px solid #c7d2fe;
-    /* Borde lila/azul suave */
-    border-radius: 12px;
-    color: #0f172a;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 14px;
+    color: #1e293b;
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 600;
-    transition: all 0.25s ease;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
 }
 
 /* Tamaño de los iconos vectoriales SVG */
@@ -188,28 +192,51 @@ body {
     color: #4f46e5;
     /* Color del icono */
     flex-shrink: 0;
+    transition: all 0.25s ease;
 }
 
 /* Estado Hover (Al pasar el cursor por encima) */
 .social-btn:hover {
-    background-color: #f5f3ff;
-    /* Fondo sutil al interactuar */
-    border-color: #6366f1;
-    color: #4338ca;
-    transform: translateY(-2px);
-    /* Pequeña elevación */
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+    transform: translateY(-2.5px);
+    box-shadow: 0 8px 18px rgba(79, 70, 229, 0.15);
+}
+
+.social-btn:hover:nth-child(1) {
+    border-color: #f43f5e;
+    color: #e11d48;
+    background-color: #fff1f2;
+}
+.social-btn:hover:nth-child(1) .icon {
+    color: #e11d48;
+}
+
+.social-btn:hover:nth-child(2) {
+    border-color: #38bdf8;
+    color: #0284c7;
+    background-color: #f0f9ff;
+}
+.social-btn:hover:nth-child(2) .icon {
+    color: #0284c7;
+}
+
+.social-btn:hover:nth-child(3) {
+    border-color: #4ade80;
+    color: #16a34a;
+    background-color: #f0fdf4;
+}
+.social-btn:hover:nth-child(3) .icon {
+    color: #16a34a;
 }
 
 /* ==========================================================================
    7. PÁGINA DE PROYECTOS (proyectos.html)
    ========================================================================== */
 .card-projects {
-    max-width: 740px;
+    max-width: 760px;
     /* Ancho ampliado para distribución en dos columnas */
     text-align: left;
     /* Alineación del contenido a la izquierda */
-    padding: 36px 48px 48px;
+    padding: 38px 48px 48px;
 }
 
 .projects-header {
@@ -228,9 +255,9 @@ body {
 /* Línea de acento alineada a la izquierda */
 .project-accent-line {
     margin: 0 0 14px 0;
-    width: 38px;
-    height: 3px;
-    background-color: #4f46e5;
+    width: 44px;
+    height: 3.5px;
+    background: linear-gradient(90deg, #4f46e5, #9333ea);
     border-radius: 9999px;
 }
 
@@ -253,6 +280,7 @@ body {
     gap: 32px;
     padding: 26px 0;
     border-bottom: 1px solid #f1f5f9;
+    transition: all 0.25s ease;
 }
 
 .project-item:first-child {
@@ -270,39 +298,45 @@ body {
 }
 
 .project-name {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: #0f172a;
     margin-bottom: 8px;
 }
 
 .project-desc {
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     line-height: 1.55;
     color: #64748b;
-    margin-bottom: 14px;
-    max-width: 360px;
+    margin-bottom: 16px;
+    max-width: 380px;
 }
 
 /* Enlace / Botón de acción con flecha */
 .project-link {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     color: #4f46e5;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     font-weight: 600;
-    transition: color 0.2s ease;
+    padding: 6px 12px;
+    background-color: #eef2ff;
+    border-radius: 8px;
+    transition: all 0.25s ease;
 }
 
 .project-link .arrow {
-    transition: transform 0.2s ease;
+    transition: transform 0.25s ease;
     display: inline-block;
 }
 
 .project-link:hover {
-    color: #3730a3;
+    color: #ffffff;
+    background-color: #4f46e5;
+    transform: translateX(2px);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
 }
 
 .project-link:hover .arrow {
@@ -317,7 +351,9 @@ body {
     border-radius: 16px;
     overflow: hidden;
     background-color: #f8fafc;
-    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+    transition: all 0.3s ease;
 }
 
 .project-img {
@@ -325,11 +361,16 @@ body {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.3s ease;
+    transition: transform 0.35s ease;
+}
+
+.project-item:hover .project-image-container {
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.18);
+    border-color: #c7d2fe;
 }
 
 .project-item:hover .project-img {
-    transform: scale(1.03);
+    transform: scale(1.05);
 }
 
 /* ==========================================================================
@@ -338,7 +379,7 @@ body {
 .card-contact {
     max-width: 580px;
     text-align: left;
-    padding: 36px 48px 48px;
+    padding: 38px 48px 48px;
 }
 
 .contact-header {
@@ -356,9 +397,9 @@ body {
 
 .contact-accent-line {
     margin: 0 0 14px 0;
-    width: 38px;
-    height: 3px;
-    background-color: #4f46e5;
+    width: 44px;
+    height: 3.5px;
+    background: linear-gradient(90deg, #4f46e5, #9333ea);
     border-radius: 9999px;
 }
 
@@ -396,15 +437,15 @@ body {
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 12px 16px;
+    padding: 13px 18px;
     font-family: inherit;
     font-size: 0.95rem;
     color: #0f172a;
     background-color: #f8fafc;
     border: 1.5px solid #e2e8f0;
-    border-radius: 12px;
+    border-radius: 14px;
     outline: none;
-    transition: all 0.2s ease;
+    transition: all 0.25s ease;
 }
 
 .form-group input::placeholder,
@@ -416,7 +457,7 @@ body {
 .form-group textarea:focus {
     background-color: #ffffff;
     border-color: #6366f1;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
 }
 
 .form-group textarea {
@@ -428,23 +469,24 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 14px 24px;
-    background-color: #4f46e5;
+    padding: 15px 26px;
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
     color: #ffffff;
     border: none;
-    border-radius: 12px;
+    border-radius: 14px;
     font-family: inherit;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.25s ease;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     margin-top: 6px;
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.25);
 }
 
 .btn-submit:hover {
-    background-color: #4338ca;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+    box-shadow: 0 8px 22px rgba(79, 70, 229, 0.38);
+    filter: brightness(1.05);
 }
 
 .btn-submit:active {

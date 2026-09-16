@@ -13,12 +13,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Librería de animaciones AOS (Animate On Scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body>
 
     <!-- TARJETA PRINCIPAL (CARD) -->
-    <main class="card">
+    <main class="card" data-aos="fade-up" data-aos-duration="700">
 
         <!-- 1. MENÚ DE NAVEGACIÓN SUPERIOR -->
         <nav class="nav-menu">
@@ -30,18 +33,18 @@
         </nav>
 
         <!-- 2. AVATAR / FOTO DE PERFIL -->
-        <div class="avatar-container">
+        <div class="avatar-container" data-aos="zoom-in" data-aos-delay="200">
             <img src="img/avatar.jpg" alt="Foto de perfil de Andjelica Verneant" class="avatar-img">
         </div>
 
         <!-- 3. INFORMACIÓN PERSONAL Y BIOGRAFÍA -->
-        <header>
+        <header data-aos="fade-up" data-aos-delay="300">
             <h1 class="profile-name">Andjelica Verneant</h1>
             <p class="profile-tagline">Estudiante de Marketing, Creativa y Estratégica</p>
             <div class="accent-line"></div>
         </header>
 
-        <section class="profile-bio">
+        <section class="profile-bio" data-aos="fade-up" data-aos-delay="400">
             <p>
                 Me apasiona conectar marcas con sus clientes.<br>
                 Creo ideas de marketing que llaman la atención y generan interés.<br>
@@ -50,7 +53,7 @@
             </p>
         </section>
         <!-- 4. ENLACES Y REDES SOCIALES -->
-        <section class="social-links">
+        <section class="social-links" data-aos="fade-up" data-aos-delay="500">
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn">
                 <!-- Icono de Instagram -->
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -81,8 +84,21 @@
             </a>
         </section>
 
+        <!-- 5. PIE DE PÁGINA / FOOTER SEMÁNTICO -->
+        <footer class="card-footer">
+            <p>&copy; 2026 Andjelica Verneant. Todos los derechos reservados.</p>
+        </footer>
+
     </main>
 
+    <!-- Librería AOS para animaciones dinámicas -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
 </body>
 
 </html>

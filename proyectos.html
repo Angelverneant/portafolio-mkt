@@ -13,12 +13,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Librería de animaciones AOS (Animate On Scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body>
 
     <!-- TARJETA PRINCIPAL (CARD) -->
-    <main class="card card-projects">
+    <main class="card card-projects" data-aos="fade-up" data-aos-duration="700">
 
         <!-- 1. MENÚ DE NAVEGACIÓN SUPERIOR -->
         <nav class="nav-menu">
@@ -30,7 +33,7 @@
         </nav>
 
         <!-- 2. ENCABEZADO DE LA SECCIÓN DE PROYECTOS -->
-        <header class="projects-header">
+        <header class="projects-header" data-aos="fade-down" data-aos-delay="200">
             <h1 class="projects-title">Presentación de mis Proyectos</h1>
             <div class="accent-line project-accent-line"></div>
             <p class="projects-subtitle">Aquí algunos proyectos en los que he trabajado.</p>
@@ -40,7 +43,7 @@
         <section class="projects-list">
 
             <!-- Proyecto 1: Plan de marketing -->
-            <article class="project-item">
+            <article class="project-item" data-aos="fade-up" data-aos-delay="300">
                 <div class="project-image-container">
                     <img src="img/proyecto1.png" alt="Mockup de Plan de Marketing Nike"
                         class="project-img">
@@ -57,7 +60,7 @@
             </article>
 
             <!-- Proyecto 2: Gestión RRSS -->
-            <article class="project-item">
+            <article class="project-item" data-aos="fade-up" data-aos-delay="400">
                 <div class="project-image-container">
                     <img src="img/proyecto2.png" alt="Customer Journey y Gestión de RRSS" class="project-img">
                 </div>
@@ -73,7 +76,7 @@
             </article>
 
             <!-- Proyecto 3: Creación sitios web -->
-            <article class="project-item">
+            <article class="project-item" data-aos="fade-up" data-aos-delay="500">
                 <div class="project-image-container">
                     <img src="img/proyecto3.jpg" alt="Mockup de Diseño y Creación de Sitios Web" class="project-img">
                 </div>
@@ -90,8 +93,21 @@
 
         </section>
 
+        <!-- 4. PIE DE PÁGINA / FOOTER SEMÁNTICO -->
+        <footer class="card-footer">
+            <p>&copy; 2026 Andjelica Verneant. Todos los derechos reservados.</p>
+        </footer>
+
     </main>
 
+    <!-- Librería AOS para animaciones dinámicas -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
 </body>
 
 </html>

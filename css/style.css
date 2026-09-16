@@ -10,7 +10,7 @@
 
 body {
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: linear-gradient(135deg, #eef2ff 0%, #f5f3ff 50%, #f1f5f9 100%);
+    background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 50%, #fdf4ff 100%);
     background-attachment: fixed;
     
     /* Centrado absoluto con Flexbox */
@@ -32,9 +32,9 @@ body {
     max-width: 580px;
     /* Ancho máximo en escritorio */
     border-radius: 28px;
-    border: 1px solid rgba(224, 231, 255, 0.6);
-    box-shadow: 0 25px 50px -12px rgba(79, 70, 229, 0.12), 0 8px 24px rgba(15, 23, 42, 0.05);
-    /* Sombra elegante y luminosa */
+    border: 1px solid rgba(216, 180, 254, 0.6);
+    box-shadow: 0 25px 50px -12px rgba(124, 58, 237, 0.15), 0 8px 24px rgba(15, 23, 42, 0.04);
+    /* Sombra elegante y luminosa morada */
     padding: 38px 42px 48px;
     text-align: center;
 }
@@ -55,20 +55,20 @@ body {
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 600;
-    color: #475569;
+    color: #64748b;
     padding-bottom: 4px;
     position: relative;
     transition: all 0.25s ease;
 }
 
 .nav-menu a:hover {
-    color: #4f46e5;
-    /* Color primario interactivo al pasar el mouse */
+    color: #7c3aed;
+    /* Color púrpura al pasar el mouse */
 }
 
 /* Línea indicadora del enlace activo (Inicio) */
 .nav-menu a.active {
-    color: #4f46e5;
+    color: #7c3aed;
     font-weight: 700;
 }
 
@@ -79,8 +79,8 @@ body {
     left: 0;
     width: 100%;
     height: 3px;
-    background: linear-gradient(90deg, #4f46e5, #7c3aed);
-    /* Barra degradada de selección */
+    background: linear-gradient(90deg, #7c3aed, #c026d3);
+    /* Barra degradada púrpura/magenta */
     border-radius: 4px;
 }
 
@@ -103,9 +103,9 @@ body {
     position: absolute;
     inset: -8px;
     border-radius: 50%;
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.35) 0%, rgba(168, 85, 247, 0.35) 100%);
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.45) 0%, rgba(192, 38, 211, 0.45) 100%);
     z-index: 1;
-    filter: blur(4px);
+    filter: blur(5px);
 }
 
 .avatar-img {
@@ -118,7 +118,7 @@ body {
     z-index: 2;
     border: 3.5px solid #ffffff;
     /* Pequeño borde blanco limpio */
-    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.15);
+    box-shadow: 0 8px 24px rgba(124, 58, 237, 0.22);
 }
 
 /* ==========================================================================
@@ -134,8 +134,8 @@ body {
 
 .profile-tagline {
     font-size: 1rem;
-    font-weight: 500;
-    color: #4f46e5;
+    font-weight: 600;
+    color: #7c3aed;
     margin-bottom: 16px;
 }
 
@@ -143,8 +143,8 @@ body {
 .accent-line {
     width: 44px;
     height: 3.5px;
-    background: linear-gradient(90deg, #4f46e5, #9333ea);
-    /* Color de acento degradado */
+    background: linear-gradient(90deg, #7c3aed, #c026d3);
+    /* Color de acento degradado morado */
     border-radius: 9999px;
     margin: 0 auto 20px;
 }
@@ -257,7 +257,7 @@ body {
     margin: 0 0 14px 0;
     width: 44px;
     height: 3.5px;
-    background: linear-gradient(90deg, #4f46e5, #9333ea);
+    background: linear-gradient(90deg, #7c3aed, #c026d3);
     border-radius: 9999px;
 }
 
@@ -317,13 +317,14 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: #4f46e5;
+    color: #7c3aed;
     text-decoration: none;
     font-size: 0.92rem;
     font-weight: 600;
-    padding: 6px 12px;
-    background-color: #eef2ff;
-    border-radius: 8px;
+    padding: 7px 14px;
+    background-color: #f5f3ff;
+    border: 1px solid #ddd6fe;
+    border-radius: 10px;
     transition: all 0.25s ease;
 }
 
@@ -334,9 +335,10 @@ body {
 
 .project-link:hover {
     color: #ffffff;
-    background-color: #4f46e5;
+    background-color: #7c3aed;
+    border-color: #7c3aed;
     transform: translateX(2px);
-    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
 }
 
 .project-link:hover .arrow {
@@ -365,8 +367,8 @@ body {
 }
 
 .project-item:hover .project-image-container {
-    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.18);
-    border-color: #c7d2fe;
+    box-shadow: 0 10px 25px rgba(124, 58, 237, 0.2);
+    border-color: #d8b4fe;
 }
 
 .project-item:hover .project-img {
@@ -399,7 +401,7 @@ body {
     margin: 0 0 14px 0;
     width: 44px;
     height: 3.5px;
-    background: linear-gradient(90deg, #4f46e5, #9333ea);
+    background: linear-gradient(90deg, #7c3aed, #c026d3);
     border-radius: 9999px;
 }
 
@@ -411,7 +413,7 @@ body {
 }
 
 .contact-subtitle strong {
-    color: #4f46e5;
+    color: #7c3aed;
     font-weight: 600;
 }
 
@@ -441,8 +443,8 @@ body {
     font-family: inherit;
     font-size: 0.95rem;
     color: #0f172a;
-    background-color: #f8fafc;
-    border: 1.5px solid #e2e8f0;
+    background-color: #faf5ff;
+    border: 1.5px solid #e9d5ff;
     border-radius: 14px;
     outline: none;
     transition: all 0.25s ease;
@@ -450,14 +452,15 @@ body {
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: #94a3b8;
+    color: #a855f7;
+    opacity: 0.6;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     background-color: #ffffff;
-    border-color: #6366f1;
-    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.2);
 }
 
 .form-group textarea {
@@ -470,7 +473,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 15px 26px;
-    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
     color: #ffffff;
     border: none;
     border-radius: 14px;
@@ -480,12 +483,12 @@ body {
     cursor: pointer;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     margin-top: 6px;
-    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.25);
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
 }
 
 .btn-submit:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 22px rgba(79, 70, 229, 0.38);
+    box-shadow: 0 8px 24px rgba(124, 58, 237, 0.45);
     filter: brightness(1.05);
 }
 

@@ -144,12 +144,34 @@ Para obtener el puntaje completo en el criterio de **Autoaprendizaje y Adaptaci�
 
 # Checklist antes de la entrega final
 
-- [ ] ¿El menú de navegación conecta correctamente las 3 páginas?
-- [ ] ¿El sitio funciona y se lee bien en celulares (sin scroll horizontal)?
-- [ ] ¿Se usó HTML semántico (`header`, `nav`, `main`, etc.)?
-- [ ] ¿Las imágenes tienen atributo `alt` y se cargan correctamente?
-- [ ] ¿El formulario de contacto tiene `label` e inputs apropiados?
-- [ ] ¿Incorporaste animaciones AOS en al menos 3 elementos?
+- [x] ¿El menú de navegación conecta correctamente las 3 páginas?
+- [x] ¿El sitio funciona y se lee bien en celulares (sin scroll horizontal)?
+- [x] ¿Se usó HTML semántico (`header`, `nav`, `main`, `section`, `article`, `footer`)?
+- [x] ¿Las imágenes tienen atributo `alt` y se cargan correctamente?
+- [x] ¿El formulario de contacto tiene `label` e inputs apropiados?
+- [x] ¿Incorporaste animaciones AOS en al menos 3 elementos?
 - [ ] ¿Tienes al menos 9 commits en total (mínimo 3 nuevos por fase)?
 - [ ] ¿Está publicado y actualizado en GitHub Pages?
 - [ ] ¿Activaste la opción **"Deployments"** en la configuración de **"About"** en tu repositorio de GitHub (haciendo clic en el engranaje ⚙️) para permitir a la profesora ver tu historial de publicación?
+
+---
+
+# 🛠️ Desafíos y Autoaprendizaje (Parcial 01)
+
+A lo largo del desarrollo de este portafolio web personal, se presentaron diversos retos técnicos que fueron investigados y resueltos de manera autónoma utilizando las guías de estudio del curso, documentación oficial y experimentación práctica.
+
+### 1. Estructuración y Semántica HTML5
+* **El Problema:** Al inicio, la estructura dependía de etiquetas genéricas `<div>`, lo que dificultaba la legibilidad del código y no cumplía con los estándares modernos de accesibilidad y SEO.
+* **La Investigación:** Se consultó la `guia_html_css.md` y la documentación de MDN Web Docs sobre las etiquetas estructurales de HTML5 (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`).
+* **La Solución:** Se refactorizaron las 3 páginas (`index.html`, `proyectos.html` y `contacto.html`), encapsulando el menú en `<nav>`, el encabezado en `<header>`, la tarjeta central en `<main>`, los proyectos individuales en `<article>` y agregando un pie de página formal con `<footer>`.
+
+### 2. Adaptabilidad y Responsive Design
+* **El Problema:** En pantallas móviles, la distribución de proyectos en varias columnas generaba desbordes y scroll horizontal incómodo para el usuario.
+* **La Investigación:** Se revisó la sección de Responsive Design en la `guia_parcial_01.md` y pautas de diseño fluido en CSS Grid y Flexbox.
+* **La Solución:** Se implementaron Media Queries (`@media (max-width: 680px)` y `@media (max-width: 480px)`) en `css/style.css`. Con esto, la lista de proyectos pasa automáticamente a una columna apilada en móviles, las imágenes mantienen un ancho fluido con `max-width: 100%`, y los márgenes y paddings se reducen para optimizar el espacio en pantallas pequeñas.
+
+### 3. Integración de Animaciones con la Librería AOS (Animate On Scroll)
+* **El Problema:** El sitio se sentía estático y carecía de dinamismo visual e interactividad durante la navegación y carga de elementos.
+* **La Investigación:** Se estudió la documentación oficial de la librería **AOS (Animate On Scroll)** y los ejemplos provistos en la `guia_parcial_01.md`.
+* **La Solución:** Se vinculó la hoja de estilos de AOS en el `<head>` y el script JavaScript al final del `<body>` con inicialización `AOS.init({ duration: 800, once: true })`. Se aplicaron atributos interactivos como `data-aos="fade-up"`, `data-aos="zoom-in"` y `data-aos-delay` en las tarjetas de presentación, encabezados, proyectos y formulario de contacto.
+
